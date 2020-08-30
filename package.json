@@ -1,22 +1,29 @@
 {
-  "name": "teemag",
-  "version": "1.0.0",
-  "description": "a rsvp system ",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "dev": "nodemon server.js"
-  },
-  "author": "rexfordnana",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "nodemon": "^2.0.3"
-  }
+    "name": "teemag",
+    "version": "1.0.0",
+    "description": "a rsvp system ",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "AWS_PROFILE=rexfordnana nodemon server.js | bunyan -o short",
+        "dev": "nodemon server.js"
+    },
+    "author": "rexfordnana",
+    "license": "ISC",
+    "dependencies": {
+        "aws-sdk": "^2.738.0",
+        "body-parser": "^1.19.0",
+        "bunyan": "^1.8.12",
+        "config": "^3.3.1",
+        "ejs": "^3.1.5",
+        "express": "^4.17.1",
+        "express-validator": "^6.6.1"
+    },
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb-base": "^14.1.0",
+        "eslint-plugin-import": "^2.20.2",
+        "nodemon": "^2.0.3"
+    }
 }

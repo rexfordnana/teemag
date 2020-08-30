@@ -1,0 +1,12 @@
+{
+    "logger": {
+        "app_id": "teemag"
+    },
+    "env": "dev",
+    "dynamo_db": {
+        "table": "teemag-rsvp-table",
+        "timeout": 5000,
+        "connection_timeout": 5000
+    },
+    "aws_home_region" : "us-east-1"
+}
