@@ -2,13 +2,14 @@ import express from 'express';
 import { childLogger } from './lib/logger.js';
 import bodyParser from 'body-parser';
 import expressValidator from 'express-validator';
-import { writeToDynamo } from "./lib/write-to-dynamo.js";
-import { Rsvp } from "./models/rsvp.js"
+import DynamoDb from './lib/dynamo.js';
+import { Rsvp } from './models/rsvp.js';
 
 const { body, validationResult } = expressValidator;
 const app = express();
 const port = 3000 || process.env.PORT;
 const log = childLogger({ op: 'In index js' });
+const dynamoDb = new DynamoDb();
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -29,17 +30,18 @@ app.post(
   ],
   (req, res) => {
     // Finds the validation errors in this request and wraps them in an object with handy functions
-    log.info('in rsvp ...');
+    log.info('In rsvp ...');
+    console.log(req.body)
     const errors = validationResult(req);
     const rsvpObject = new Rsvp(req.body);
-    console.log(rsvpObject.formatForDynamo())
+    // console.log(rsvpObject.formatForDynamo());
     if (!errors.isEmpty()) {
       log.error(errors);
       res.redirect('/');
     } else {
-      // writeToDynamo(payload);
+      dynamoDb.writeToDynamo(rsvpObject.formatForDynamo());
     }
-    log.info(req.body);
+    // log.info(req.body);
     res.redirect('/');
   }
 );
