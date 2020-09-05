@@ -7,7 +7,7 @@ import { Rsvp } from './models/rsvp.js';
 
 const { body, validationResult } = expressValidator;
 const app = express();
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 8081;
 const log = childLogger({ op: 'In index js' });
 const dynamoDb = new DynamoDb();
 
