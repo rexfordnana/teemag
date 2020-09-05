@@ -6,8 +6,8 @@
     "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "AWS_PROFILE=rexfordnana nodemon server.js | bunyan -o short",
-        "dev": "nodemon server.js"
+        "start": "node server.js | bunyan -o short",
+        "dev": "AWS_PROFILE=rexfordnana nodemon server.js | bunyan -o short"
     },
     "author": "rexfordnana",
     "license": "ISC",
