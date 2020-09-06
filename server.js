@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 app.post(
   '/rsvp',
   [
-    body('name').isLength({ min: 10 }),
+    body('name').isLength({ min: 1 }),
     // body('email').isEmail,
     //   body('attending').isString,
     // body('message').isString,
