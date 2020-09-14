@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Define routes
 app.get('/', (req, res) => {
-  res.render('index.html');
+  res.render('index');
 });
 
 app.post('/rsvp', (req, res) => {
@@ -27,14 +27,14 @@ app.post('/rsvp', (req, res) => {
   const rsvpObject = new Rsvp(req.body);
   // console.log(rsvpObject.formatForDynamo());
   console.log('do nothing');
-  // dynamoDb.writeToDynamo(rsvpObject.formatForDynamo());
+  dynamoDb.writeToDynamo(rsvpObject.formatForDynamo());
 
   //send email after saving to dynamo
   const mailer = new SendMail(rsvpObject.email);
-  mailer.send();
-  // log.info(req.body);
+  // mailer.send();
+  log.info(req.body);
   res.redirect('/');
-});
+})
 
 app.listen(port, () => {
   log.info({ port: port }, 'App started and listening ...');
