@@ -17,17 +17,17 @@
         function sayThanks(){
             const rsvpForm = document.getElementById('newRsvp');
             const submitButton = document.getElementById('mainSubmitter');
-            console.log(rsvpForm.checkValidity());
             if(rsvpForm.checkValidity()){
                 Swal.fire(
                     'Thank you! We are honored',
                     'You’ll recieve a confirmation email!',
                     'success'
                 ).then(() => {
-                    console.log('something cooking');
                     rsvpForm.action = '/rsvp';
                     rsvpForm.requestSubmit(submitButton);
                 });
+            }else{
+                rsvpForm.requestSubmit(submitButton);
             }
         }
 
