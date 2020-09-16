@@ -22,18 +22,25 @@ app.get('/', (req, res) => {
 });
 
 app.post('/rsvp', (req, res) => {
-  // Finds the validation errors in this request and wraps them in an object with handy functions
-  log.info('In rsvp ...');
-  const rsvpObject = new Rsvp(req.body);
-  // console.log(rsvpObject.formatForDynamo());
-  console.log('do nothing');
-  dynamoDb.writeToDynamo(rsvpObject.formatForDynamo());
+  log.info({op: 'rsvp-post'}, 'Inside rsvp post handler');
 
-  //send email after saving to dynamo
-  const mailer = new SendMail(rsvpObject.email);
-  // mailer.send();
-  log.info(req.body);
-  res.redirect('/');
+  //format request body into savable rsvp object
+  const rsvpObject = new Rsvp(req.body);
+  const email = rsvpObject.email;
+
+  //first check if email already registered
+  dynamoDb.readFromDynamo(email, (dynamoResponse)=>{
+    if( dynamoResponse.Count > 0 ) {
+      log.info(email, ' This email has already registered!')
+      res.render('index', { errors: 'Your email has already registered'})
+    }else{
+      dynamoDb.writeToDynamo(rsvpObject.formatForDynamo());
+      //send email after saving to dynamo
+      // const mailer = new SendMail(rsvpObject.email);
+      // mailer.send();
+      res.redirect('/');
+    }
+  });
 })
 
 app.listen(port, () => {
