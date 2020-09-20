@@ -2,7 +2,7 @@
 
 package-lock.json
 .eslintrc.json
-*/.DS_Store
+.DS_Store
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
