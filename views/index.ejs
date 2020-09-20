@@ -42,7 +42,7 @@
     <link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/magnific-popup.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Fredericka+the+Great" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
     <!-- favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
@@ -117,6 +117,7 @@
                         <h1 class="display-2 pari text-white mb-4">Rexford &amp; Penelope</h1>
                         <p class="font-weight-300 text-light  lead mb-5 ">Friday December 25th, 2020 - Unique Floral, The Avenue. </p>
                         <a href="#rsvp" class="btn btn-primary btn-wide-sm btn-sm  scroll">RSVP</a>
+                        <a href="#trivia" class="btn btn-primary btn-wide-sm btn-sm  scroll">Play Trivia!</a>
                     </div>
                 </div>
                 <!--End row-->
@@ -1749,12 +1750,47 @@
         <!--End container-->
     </section>
     <!--Hero section-->
-    <section class="gradient-overlay ">
-        <img class="bg-image" src="assets/img/2.jpg" alt="">
+    <section id="trivia" class="gradient-overlay">
+        <img class="bg-image" src="assets/img/rex/game.jpeg" alt="">
         <div class="container">
             <!--row-->
             <div class="row  min-vh-80 align-items-center z-index-2 position-relative text-center">
-                <div class="col-12">
+                 <!-------------- WELCOME SCREEN --------------->
+                <div class='screen' id='welcome-screen'>
+                <!-- <h1 id="score">-</h1> -->
+                    <h1>How well do you know the couple!</h1>
+                    <!-- <h4>You have questions waiting for you.</h4> -->
+                    <h4 id="question-count">You have questions waiting for you.</h4>
+                    <button class="start-btn">Start</button>
+                </div>
+                <!-------------- CATEGORY SCREEN --------------->
+                <div class='screen' id='category-screen'>
+                    <h1>Choose a category.</h1>
+                    <div id="category-set">
+                    </div>
+                </div>    
+                <!-- <h1 id="score">-</h1> -->
+                <!-------------- QUESTION SCREEN --------------->
+                <div class='screen' id='question-screen'>
+                <h4 id="category">Category Name</h4>
+                <h1 id="question">Question goes here?</h1>
+                <div id="answer-set">
+                    <button class="answer-btn" id="correctAnswer">Correct Answer</button>
+                    <button class="answer-btn" id="incorrectAnswer1">Wrong Answer</button>
+                    <button class="answer-btn" id="incorrectAnswer2">Wrong Answer</button>
+                    <button class="answer-btn" id="incorrectAnswer3">Wrong Answer</button>
+                </div>
+                <h1 id="feedback">Feedback will go here.</h1>
+                </div>
+
+                <!-------------- THANK YOU SCREEN --------------->
+                <div class='screen' id='thankyou-screen'>
+                <h1>Thanks for playing our game!</h1>
+                <h4 id='game-results'>Looks like you did pretty well.</h4>
+                <button class="start-btn">Restart</button>
+                </div>
+
+                <!-- <div class="col-12">
                     <div class=" play-btn-container mb-4">
                         <a href="https://www.youtube.com/watch?v=Gc2en3nHxA4" class="btn btn-primary btn-play popup-youtube">
                             <svg class="icon-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 168.7 270.7" enable-background="new 0 0 168.7 270.7;" xml:space="preserve">
@@ -1766,7 +1802,7 @@
                     <h1 class="display-4 font-secondary  text-white mb-4">Just Married</h1>
                     <p class="w-md-50 mb-0 mx-auto text-light lead font-weight-300 "> Friendship... is not something you learn in school. But if you haven't learned the meaning of friendship, you really haven't learned anything</p>
                 </div>
-            </div>
+            </div> -->
             <!--End row-->
         </div>
         <!--End container-->
@@ -1808,8 +1844,14 @@
     <script src="js/jquery.countdown.min.js"></script>
     <script src="js/placeholders.min.js"></script>
     <script src="js/script.js"></script>
-    <!-- Google analytics -->
-    <!-- End google analytics -->
+    <!--Trivia-->
+    <script src="js/teemag-trivia.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/gh/idewcomputing/code-trivia/src/trivia.js"></script> 
+    <!-- iDEW trivia -->
 </body>
 
 </html>

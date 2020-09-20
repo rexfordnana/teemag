@@ -24,3 +24,26 @@ font-style: normal;
 font-weight: normal;
 src: local('Existence Unicase Light'), url('../webfonts/Existence-UnicaseLight.woff') format('woff');
 }
+
+@font-face {
+font-family: 'Bombtrack';
+font-style: normal;
+font-weight: normal;
+src: local('Bombtack'), url('../webfonts/BombtrackDemo.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Survivor';
+font-style: normal;
+font-weight: normal;
+src: local('survivor'), url('../webfonts/SURVIVORdemo.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'LadyTwo';
+    src: url('../webfonts/LadyTwo-Regular.woff2') format('woff2'),
+        url('../webfonts/LadyTwo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

@@ -175,6 +175,7 @@ Created by : mutationthemes
 
 .navbar-expand-lg .navbar-logo {
     width: 7rem;
+    font-family: 'Fredericka the Great', 'Times New Roman', Times, serif;
 }
 
 .header-navbar {
@@ -689,6 +690,51 @@ ul.instafeed-list li a {
 
 /* End footer*/
 
+/* Trivia */
+.screen {
+    background-color: rgba(255, 154, 85);
+    border: 1px solid rgb(50,50,50);
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px grey;
+    box-sizing: border-box;
+    margin: 15px auto;
+    padding: 15px;
+    max-width: 700px;
+    width: calc(100vw - 30px);
+    height: calc(100vh - 40px);
+}
+canvas {
+    min-width: 100vw;
+    min-height: 100vh; 
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+.screen h1{
+    font-family: "Bombtrack", "Fredericka the Great", serif;
+    font-size: 40px;
+}
+.screen button {
+    /* background-color: rgba(255,255,255,.7); */
+    border: none;
+    outline: none;
+    border-radius: 19px;
+    box-shadow: 3px 3px 7px black;
+    font-size: 24px;
+    display: block;
+    margin: 10px auto;
+    min-height: 70px;
+    width: 100%;
+}
+.highlight {
+    background-color: green;
+    color: white;
+}
+.highlight-wrong {
+    background-color: red;
+    color: white;
+}
+/* End Trivia */
 
 /*Miscellaneous*/
 
@@ -698,7 +744,7 @@ ul.instafeed-list li a {
 }
 
 .gradient-overlay:before {
-    background-color: rgba(23, 23, 38, .6);
+    /* background-color: rgba(23, 23, 38, .6); */
     position: absolute;
     top: 0;
     right: 0;
@@ -1160,7 +1206,9 @@ ul.instafeed-list li {
         display: block;
     }
     .header .navbar-expand-lg .navbar-nav .nav-link {
-        color: #ffffff;
+        color: #7c7e7f;
+        font-size: large;
+        font-weight: bold;
     }
     .header.switched-header {
         background-color: #ffffff;
