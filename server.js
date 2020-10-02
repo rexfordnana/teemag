@@ -20,7 +20,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
   res.render('index');
 });
-
 app.post('/rsvp', (req, res) => {
   log.info({op: 'rsvp-post'}, 'Inside rsvp post handler');
 
@@ -38,7 +37,7 @@ app.post('/rsvp', (req, res) => {
       //send email after saving to dynamo
       // const mailer = new SendMail(rsvpObject.email);
       // mailer.send();
-      res.redirect('/');
+      res.render('index', {alert: true, alertTitle: 'Thank you! We are honored', alertMessage: 'You’ll recieve a confirmation email!' });
     }
   });
 })
