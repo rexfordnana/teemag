@@ -1,30 +1,28 @@
-<!DOCTYPE html>
-<html>
-	<%- include('./layouts/head'); -%>
-	<body>
-		<div class="row justify-content-center">
-			<div class="col-xl-5 col-lg-5 col-md-6">
-				<h1>Sign In</h1>
-				<form action="auth" method="POST">
-					<% if (locals.message) { %>
-						<p class="warning"><%= message %></p>
-					<% } %>
-					<div class="form-group">
-						<label for="username">Username</label>
-						<input name="username" id="username" type="text" class="form-control form-control-lg" placeholder="Username" required>
-						<div class="invalid-feedback">Please enter username.</div>
-					</div>
-					<div class="form-group">
-						<label for="password">Password</label>
-						<input name="password" id="password" type="password" class="form-control form-control-lg" placeholder="Password" required>
-						<div class="invalid-feedback">Please enter password.</div>
-					</div>
-					<div class="form-group text-center">
-						<button class="btn btn-lg btn-block btn-primary">Submit</button>
-					</div>
-				</form>
-			</div>
+
+<%- include('./layouts/head'); -%>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-xl-5 col-lg-5 col-md-6">
+			<h1>Sign In</h1>
+			<form action="auth" method="POST">
+				<% if (locals.message) { %>
+					<p class="warning"><%= message %></p>
+				<% } %>
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input name="username" id="username" type="text" class="form-control form-control-lg" placeholder="Username" required>
+					<div class="invalid-feedback">Please enter username.</div>
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input name="password" id="password" type="password" class="form-control form-control-lg" placeholder="Password" required>
+					<div class="invalid-feedback">Please enter password.</div>
+				</div>
+				<div class="form-group text-center">
+					<button class="btn btn-lg btn-block btn-primary">Submit</button>
+				</div>
+			</form>
 		</div>
-	</body>
+	</div>
+</div>
 	<%- include('./layouts/footer'); -%>
-</html>
