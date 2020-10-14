@@ -1,56 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175037646-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-175037646-1');
-
-        function sayThanks(){
-            Swal.fire(
-                    'Thank you! We are honored',
-                    'You’ll recieve a confirmation email!',
-                    'success'
-            );
-        }
-
-    </script>
-    <!-- Metas -->
-    <meta charset="utf-8">
-    <title>TeeMag - Love made from Osu</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Css -->
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/magnific-popup.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Fredericka+the+Great" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
-    <!-- favicon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#000000">
-    <!--open graph-->
-    <meta property="og:site_name" content="TeeMag2020" />
-    <meta property="og:title" content="A Love Brewed In Osu Pot" />
-    <meta property="og:description" content="A wedding website for Rexford and Penelope." />
-    <meta property="og:image" content="http://teemag2020.com/assets/img/rex/save-the-date.jpeg" />
-    <meta property="og:type" content="blog" />
-    <meta property="og:url" content="http://teemag2020.com/">
-</head>
+<%- include('./layouts/head'); -%>
 
 <body>
     <!-- Preloader -->
@@ -67,36 +18,7 @@
     <!--Wrapper-->
     <div class="wrapper">
         <!--Header-->
-        <header class="header default">
-            <div class="header-section">
-                <!--Container-->
-                <div class="container-fluid ">
-                    <nav class="navbar navbar-expand-lg header-navbar ml-0 ml-lg-5">
-                        <a class=" navbar-brand navbar-logo scroll" href="#wrapper">
-                            <p class="mb-0">#TEEMAG2020</p>
-                            <!-- <img class="mb-0 logo-light" src="assets/svg/logo-light.svg" alt=""> -->
-                            <!-- <img class="mb-0 logo-dark" src="assets/svg/logo-dark.svg" alt=""> -->
-                        </a>
-                        <button class="navbar-toggler btn-navbar-toggler" type="button" data-toggle="collapse" data-target=".nav-menu" aria-expanded="true" aria-label="Toggle navigation">
-                     <span class="fa fa-bars"></span>
-                     </button>
-                        <div class="nav-menu collapse navbar-collapse navbar-collapse justify-content-end mr-5 ">
-                            <ul class=" navbar-nav  header-navbar-nav">
-                                <li><a class=" nav-link scroll" href="#resto">Date</a></li>
-                                <li><a class=" nav-link scroll" href="#story">Love Story</a></li>
-                                <li><a class=" nav-link scroll" href="#wedding">Wedding</a></li>
-                                <li><a class=" nav-link scroll" href="#gallery">Gallery</a></li>
-                                <li><a class=" nav-link scroll" href="#gift">Gift Registry</a></li>
-                                <li><a class=" nav-link scroll" href="#friends">Friends</a></li>
-                                <li><a class=" nav-link scroll" href="#rsvp">Rsvp</a></li>
-                                <li><a class=" nav-link scroll" href="#location">Location</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-                <!--End container-->
-            </div>
-        </header>
+        <%- include('./layouts/header'); -%>
         <!--End header-->
         <!--Hero section-->
         <section class="gradient-overlay gradient-overlay-dark ">
@@ -1586,41 +1508,10 @@
         </div>
     </section>
     <!--End hero section-->
-    </footer>
-    <section class="footer-copyright spacer-double-sm bg-white text-center">
-        <p class="text-uppercase small text-muted d-block mb-0">&copy; 2020 all right reserved - Rexfordnana.</p>
-    </section>
-    <!--To the top-->
-    <a class="scroll-to-top scroll" href="#wrapper">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 273.1091 238.2098" enable-background="new 0 0 273.1091 238.2098" xml:space="preserve">
-               <path fill="#E25D5D" d="M136.7428,23.457L136.7428,23.457C105.6324-7.6197,55.2286-7.8699,23.8161,23.0177
-                  c-31.6835,31.1545-31.6582,82.277-0.501,113.9287l90.7191,92.1591c11.8174,12.005,31.1293,12.1571,43.1343,0.3396l91.6648-90.2325
-                  c31.6726-31.1777,32.5645-83.0754,1.4308-114.7912C219.1893-7.2342,168.3452-7.6516,136.7428,23.457z" />
-               <path fill="#FFFFFF" d="M110.7149,123.5662l-2.9542-2.9542c-1.2509-1.2509-1.2509-3.2736,0-4.5112l25.8562-25.8695
-                  c1.2509-1.2509,3.2736-1.2509,4.5112,0l25.8562,25.8562c1.2509,1.2509,1.2509,3.2736,0,4.5112l-2.9542,2.9542
-                  c-1.2642,1.2642-3.3268,1.2376-4.5644-0.0532l-15.2635-16.0221v38.2454c0,1.7699-1.4239,3.1938-3.1938,3.1938H133.75
-                  c-1.7699,0-3.1938-1.4239-3.1938-3.1938v-38.2454l-15.2769,16.0354C114.0418,124.8171,111.9791,124.8437,110.7149,123.5662z" />
-            </svg>
-    </a>
-    <!-- End to the top -->
-    </div>
+    <%- include('./layouts/footer'); -%>
     <!-- End wrapper-->
     <!--Javascript-->
-    <script src="js/jquery-1.12.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/smooth-scroll.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/placeholders.min.js"></script>
-    <script src="js/script.js"></script>
-    <!--Trivia-->
-    <script src="js/teemag-trivia.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.min.js'></script>
-    <script src="https://cdn.jsdelivr.net/gh/idewcomputing/code-trivia/src/trivia.js"></script> 
+    <%- include('./layouts/scripts'); -%>
     <!-- iDEW trivia -->
 </body>
 

@@ -1,0 +1,34 @@
+<%- include('./layouts/head'); -%>
+<div class="container">
+	<!--Row-->
+	<div class="row justify-content-center">
+			<div class="col">
+					<div class=" text-center mb-5 pb-5">
+							<h1 class="display-4 mb-0">Rsvp Messages</h1>
+					</div>
+			</div>
+	</div>
+	<!--End row-->
+	<!--Row-->
+	<div class="card-columns">
+		<% for(var i=0; i<locals.rsvpObject.length; i++){ %>
+			<% if (i%2==0) { %>
+			<div class="card text-white bg-info mb-3">
+			<%} else { %>
+			<div class="card bg-light mb-3">
+			<% } %>
+				<div class="card-header"><%= rsvpObject[i].email %></div>
+				<div class="card-body">
+					<h5 class="card-title"><%= rsvpObject[i].name %></h5>
+					<p class="card-text"><%= rsvpObject[i].message%> </p>
+				</div>
+				<div class="card-footer">
+					<small><%= moment(rsvpObject[i].created_on).format('dddd, MMMM Do, YYYY h:mm:ss A') %></small><br/>
+					<small><%= rsvpObject[i].attending?"Attending":"Not attending" %></small>
+				</div>
+			</div>
+		<%} %>	
+	</div>
+	<!--End container-->
+</div>
+<%- include('./layouts/footer'); -%>
