@@ -1022,7 +1022,7 @@
                                     l201.4838-200.1096c69.6179-69.1431,71.0768-183.7278,2.0303-253.4415C485.013-12.8027,372.7591-13.2244,303.2954,55.7655z"></path>
                               </mask>
                            </defs>
-                           <image mask="url(#mask-middle-2)" width="607" height="532" xlink:href="assets/img/rex/party/michael.jpeg"></image>
+                           <image mask="url(#mask-middle-2)" width="607" height="532" xlink:href="assets/img/rex/party/mike-new.jpeg"></image>
                         </svg>
                             </div>
                             <div class=" mt-4">
@@ -1218,7 +1218,7 @@
             <div class="row justify-content-center">
                 <div class="col">
                     <div class=" mb-5 pb-5 text-center">
-                        <h1 class="display-4 ">RSVP</h1>
+                        <h1 class="display-4">RSVP</h1>
                         <p class="w-md-40 mb-0 mx-auto text-dark-gray opacity-8">Let us know if you are coming ...</p>
                     </div>
                 </div>
@@ -1228,9 +1228,6 @@
                 <div class="col-xl-5 col-lg-5 col-md-6">
                     <form name="rsvp" id="newRsvp" method="post" action="/rsvp">
                         <div class="form-group">
-                            <% if (locals.errors) { %>
-                                <h2><%= errors %></h2>
-                            <% } %>
                             <% if (locals.alert) { %>
                                 <p class="font-weight-300 text-white lead mb-5">Thanks for registering</p>
                             <% } %>
@@ -1241,6 +1238,9 @@
                             <div class="invalid-feedback">Please enter a name.</div>
                         </div>
                         <div class="form-group">
+                            <% if (locals.errors.email) { %>
+                                <div class="error"><%= errors.email %></div>
+                            <% } %>
                             <label for="email">Email Address</label>
                             <input name="email" id="email" type="email" class="form-control form-control-lg" for="" placeholder="Your email" required>
                         </div>
@@ -1271,11 +1271,16 @@
                             <label>Message for the couple </label>
                             <textarea rows="8" cols="50" name="message" id="message" type="text" class="form-control" placeholder="Message ..."></textarea>
                         </div>
+                        <div class="g-recaptcha form-group" data-sitekey="6LcbgNkZAAAAAGVwqD4u6B2fhHtHIrEy5Z7qofBQ"></div>
+                        <br/>
+                        <% if (locals.errors.captcha ) { %>
+                            <div class="error"><%= errors.captcha %></div>
+                          <% } %>
                         <div class="form-group text-center">
-                            <button id="mainSubmitter" class="btn btn-lg btn-block btn-primary">Confirm registry</button>
-                            <small class="mt-2 text-dark-gray opacity-8">You’ll recieve a confirmation email.</small>
+                            <button id="mainSubmitter"  class="btn btn-lg btn-block btn-primary">Confirm registry</button>
+                            <!-- <small class="mt-2 text-dark-gray opacity-8">You’ll recieve a confirmation email.</small> -->
                         </div>
-                    </form>
+                    </form> 
                 </div>
             </div>
         </div>

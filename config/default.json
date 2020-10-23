@@ -8,6 +8,7 @@
 			"timeout": 5000,
 			"connection_timeout": 5000
 	},
+	"captchaSecret": "6LcbgNkZAAAAAOwO7RVTFNy79DSQWFk3lvQfSxpi",
 	"accounts": [
 		{
 			"username": "rexfordnana",

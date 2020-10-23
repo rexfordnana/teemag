@@ -7,7 +7,7 @@
 			<h1>Sign In</h1>
 			<form action="auth" method="POST">
 				<% if (locals.message) { %>
-					<p class="warning"><%= message %></p>
+					<p class="warning error"><%= message %></p>
 				<% } %>
 				<div class="form-group">
 					<label for="username">Username</label>
