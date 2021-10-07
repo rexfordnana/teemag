@@ -1,0 +1,23 @@
+{
+	"logger": {
+			"app_id": "teemag"
+	},
+	"env": "dev",
+	"dynamo_db": {
+			"table": "teemag-rsvp-table",
+			"timeout": 5000,
+			"connection_timeout": 5000
+	},
+	"captchaSecret": "6LcbgNkZAAAAAOwO7RVTFNy79DSQWFk3lvQfSxpi",
+	"accounts": [
+		{
+			"username": "rexfordnana",
+			"password": "teezone01"
+		},
+		{
+			"username": "teemag",
+			"password": "Mpl24791"
+		}
+	],
+	"aws_home_region" : "us-east-1"
+}
