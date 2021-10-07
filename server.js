@@ -41,10 +41,7 @@ app.post('/rsvp', async (req, res) => {
   const email = rsvpObject.email.toLowerCase();
   const captcha = req.body['g-recaptcha-response'];
   const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  const captchaSecret = config.get('captchaSecret')
-  console.log('Captcha secret', captchaSecret)
-
-  log.info('capture from form ', captcha)
+  const captchaSecret = config.get('captchaSecret') || process.env.captchaSecret
 
   // g-recaptcha-response is the key that browser will generate upon form submit.
   // if its blank or null means user has not selected the captcha, so return the error.
