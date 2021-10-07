@@ -53,7 +53,6 @@ app.post('/rsvp', async (req, res) => {
   }
   try{
     const captchaVerified = await axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${captchaSecret}&response=${captcha}&remoteip=${ip}`)
-    console.log('------------>', captchaVerified)
     if (captchaVerified.data.success){
       //first check if email already registered
       dynamoDb.readFromDynamo(email, (dynamoResponse)=>{
